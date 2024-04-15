@@ -20,6 +20,8 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <!-- https://mvnrepository.com/artifact/org.apache.kafka/kafka-clients -->
         <kafka.version>3.7.0</kafka.version>
+        <!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-dependencies -->
+        <spring-boot.version>3.2.4</spring-boot.version>
         <!-- 工具类版本管理 -->
         <!-- https://mvnrepository.com/artifact/org.projectlombok/lombok -->
         <lombok.version>1.18.32</lombok.version>
