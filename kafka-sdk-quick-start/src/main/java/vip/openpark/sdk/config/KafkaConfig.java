@@ -1,7 +1,9 @@
 package vip.openpark.sdk.config;
 
+import org.apache.kafka.clients.consumer.ConsumerConfig;
 import org.apache.kafka.clients.consumer.KafkaConsumer;
 import org.apache.kafka.clients.producer.KafkaProducer;
+import org.apache.kafka.clients.producer.ProducerConfig;
 
 import java.net.InetAddress;
 import java.net.UnknownHostException;
@@ -21,8 +23,8 @@ public class KafkaConfig {
      */
     public static <K, V> KafkaProducer<K, V> producerConfig() throws UnknownHostException {
         Properties properties = new Properties();
-        // 设置客户端id
-        properties.put("client.id", InetAddress.getLocalHost().getHostName());
+        // 设置客户端id（可以使用 ProducerConfig.CLIENT_ID_CONFIG 里面常量）
+        properties.put(ProducerConfig.CLIENT_ID_CONFIG, InetAddress.getLocalHost().getHostName());
         // kafka 集群配置，多个以半角逗号分隔
         properties.put("bootstrap.servers", "172.17.35.120:9092");
         // 0：不保证消息的可靠性，1：保证消息的可靠性，-1：确保消息至少被一次的提交，all：确保消息被全部提交
@@ -43,8 +45,8 @@ public class KafkaConfig {
      */
     public static <K, V> KafkaConsumer<K, V> consumerConfig() throws UnknownHostException {
         Properties properties = new Properties();
-        // 设置客户端id
-        properties.put("client.id", InetAddress.getLocalHost().getHostName());
+        // 设置客户端id（可以使用 ConsumerConfig.CLIENT_ID_CONFIG 里面常量）
+        properties.put(ConsumerConfig.CLIENT_ID_CONFIG, InetAddress.getLocalHost().getHostName());
         // 设置消费组
         properties.put("group.id", "hi-kafka-group");
         // kafka 集群配置，多个以半角逗号分隔
