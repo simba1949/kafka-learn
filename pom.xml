@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>vip.openpark</groupId>
+    <artifactId>kafka-learn</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
+
+    <modules>
+        <module>kafka-sdk-quick-start</module>
+        <module>kafka-spring-boot-quick-start</module>
+    </modules>
+
+    <properties>
+        <maven.compiler.source>21</maven.compiler.source>
+        <maven.compiler.target>21</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <!-- https://mvnrepository.com/artifact/org.apache.kafka/kafka-clients -->
+        <kafka.version>3.7.0</kafka.version>
+        <!-- 工具类版本管理 -->
+        <!-- https://mvnrepository.com/artifact/org.projectlombok/lombok -->
+        <lombok.version>1.18.32</lombok.version>
+        <!-- https://mvnrepository.com/artifact/ch.qos.logback/logback-classic -->
+        <logback.version>1.5.5</logback.version>
+    </properties>
+</project>
