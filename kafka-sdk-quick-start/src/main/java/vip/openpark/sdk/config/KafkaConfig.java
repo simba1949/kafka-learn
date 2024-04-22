@@ -30,7 +30,7 @@ public class KafkaConfig {
         properties.put(ProducerConfig.CLIENT_ID_CONFIG, InetAddress.getLocalHost().getHostName());
         // kafka 集群配置，多个以半角逗号分隔
         properties.put(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, "192.168.8.43:9092");
-        // 0：不保证消息的可靠性，1：保证消息的可靠性，-1：确保消息至少被一次的提交，all：确保消息被全部提交
+        // 0：生产者已经发送到网络当中；1：leader已经成功写入日志；-1：所有follower都写入日志，并且leader已经写入日志。
         properties.put(ProducerConfig.ACKS_CONFIG, "all");
         properties.put(ProducerConfig.RETRIES_CONFIG, 0);
         // 拦截器
