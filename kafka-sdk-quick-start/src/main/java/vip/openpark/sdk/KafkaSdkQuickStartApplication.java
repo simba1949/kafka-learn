@@ -43,7 +43,7 @@ public class KafkaSdkQuickStartApplication {
             kafkaConsumer.poll(Duration.ofSeconds(2000))
                 .forEach(record -> {
                     // 消费消息
-                    log.info("key={}, value={}", record.key(), record.value());
+                    log.info("消费者：key={}, value={}", record.key(), record.value());
                 });
             countDownLatch.countDown();
         }, "consumer-thread").start();
